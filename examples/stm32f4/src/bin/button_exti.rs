@@ -19,9 +19,9 @@ async fn main(_spawner: Spawner) {
     info!("Press the USER button...");
 
     loop {
-        button.wait_for_rising_edge().await;
-        info!("Pressed!");
         button.wait_for_falling_edge().await;
+        info!("Pressed!");
+        button.wait_for_rising_edge().await;
         info!("Released!");
     }
 }
